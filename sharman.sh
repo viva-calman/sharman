@@ -11,14 +11,14 @@ function SearchAndPlay {
 	if [[ -n $RESULT ]]
 	then
 		echo "SRT subtitle found in ./"$PATH1
-		mplayer -sub $PATH1/$SUBNAME.srt $NAME
+		mplayer -vf screenshot -sub $PATH1/$SUBNAME.srt $NAME
 		exit 0
 	fi
 	RESULT=$(ls $PATH1|grep $SUBNAME.ass)
 	if [[ -n $RESULT ]]
 	then
 		echo "ASS subtitle found in ./"$PATH1
-		mplayer -ass -sub $PATH1/$SUBNAME.ass $NAME
+		mplayer -vf screenshot -ass -sub $PATH1/$SUBNAME.ass $NAME
 		exit 0
 	fi
 }
