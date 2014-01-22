@@ -1,7 +1,7 @@
 #!/bin/bash
 
 FILENAME=$1
-SUBNAME=$(echo $FILENAME|sed -e 's/\.[a-zA-Z]*$//')
+SUBNAME=$(echo $FILENAME|sed -e 's/\.[a-zA-Z0-9]*$//')
 
 function SearchAndPlay {
 	NAME=$1
